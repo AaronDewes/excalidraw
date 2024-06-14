@@ -11,6 +11,7 @@ import {
   DeviceDesktopIcon,
   ExportIcon,
   ExportImageIcon,
+  gridIcon,
   HelpIcon,
   LoadIcon,
   MoonIcon,
@@ -27,6 +28,7 @@ import {
   actionLoadScene,
   actionSaveToActiveFile,
   actionShortcuts,
+  actionToggleGridMode,
   actionToggleTheme,
 } from "../../actions";
 import clsx from "clsx";
@@ -298,6 +300,26 @@ export const ChangeCanvasBackground = () => {
   );
 };
 ChangeCanvasBackground.displayName = "ChangeCanvasBackground";
+
+export const ToggleGridMode = () => {
+  const { t } = useI18n();
+  const appState = useUIAppState();
+  const actionManager = useExcalidrawActionManager();
+
+  return (
+    <DropdownMenuItem
+      onSelect={() =>
+        actionManager.executeAction(actionToggleGridMode, "ui")
+      }
+      icon={gridIcon}
+      data-testid="grid-mode-button"
+      aria-label={t("buttons.grid")}
+    >
+      {t("buttons.grid")}
+    </DropdownMenuItem>
+  );
+};
+ToggleGridMode.displayName = "ToggleGridMode";
 
 export const Export = () => {
   const { t } = useI18n();

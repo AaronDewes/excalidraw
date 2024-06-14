@@ -146,7 +146,7 @@
     "hint_emptyPrivateLibrary": "Wähle ein Element von der Zeichenfläche, um es hier hinzuzufügen."
   },
   "buttons": {
-    "clearReset": "Zeichenfläche löschen & Hintergrundfarbe zurücksetzen",
+    "clearReset": "Zeichenfläche zurücksetzen",
     "exportJSON": "In Datei exportieren",
     "exportImage": "Exportiere Bild...",
     "export": "Speichern als...",

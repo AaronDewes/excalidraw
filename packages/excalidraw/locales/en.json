@@ -158,6 +158,7 @@
     "hint_emptyPrivateLibrary": "Select an item on canvas to add it here."
   },
   "buttons": {
+    "grid": "Show grid",
     "clearReset": "Reset the canvas",
     "exportJSON": "Export to file",
     "exportImage": "Export image...",
