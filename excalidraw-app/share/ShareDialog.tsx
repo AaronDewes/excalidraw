@@ -1,20 +1,13 @@
-import { useEffect, useRef, useState } from "react";
-import * as Popover from "@radix-ui/react-popover";
-import { copyTextToSystemClipboard } from "../../packages/excalidraw/clipboard";
+import { useEffect } from "react";
 import { trackEvent } from "../../packages/excalidraw/analytics";
 import { getFrame } from "../../packages/excalidraw/utils";
 import { useI18n } from "../../packages/excalidraw/i18n";
 import { KEYS } from "../../packages/excalidraw/keys";
 import { Dialog } from "../../packages/excalidraw/components/Dialog";
 import {
-  copyIcon,
   LinkIcon,
   playerPlayIcon,
   playerStopFilledIcon,
-  share,
-  shareIOS,
-  shareWindows,
-  tablerCheckIcon,
 } from "../../packages/excalidraw/components/icons";
 import { TextField } from "../../packages/excalidraw/components/TextField";
 import { FilledButton } from "../../packages/excalidraw/components/FilledButton";
@@ -33,20 +26,6 @@ export const shareDialogStateAtom = atom<
   { isOpen: false } | { isOpen: true; type: ShareDialogType }
 >({ isOpen: false });
 
-const getShareIcon = () => {
-  const navigator = window.navigator as any;
-  const isAppleBrowser = /Apple/.test(navigator.vendor);
-  const isWindowsBrowser = navigator.appVersion.indexOf("Win") !== -1;
-
-  if (isAppleBrowser) {
-    return shareIOS;
-  } else if (isWindowsBrowser) {
-    return shareWindows;
-  }
-
-  return share;
-};
-
 export type ShareDialogProps = {
   collabAPI: CollabAPI | null;
   handleClose: () => void;
@@ -64,42 +43,6 @@ const ActiveRoomDialog = ({
   handleClose: () => void;
 }) => {
   const { t } = useI18n();
-  const [justCopied, setJustCopied] = useState(false);
-  const timerRef = useRef<number>(0);
-  const ref = useRef<HTMLInputElement>(null);
-  const isShareSupported = "share" in navigator;
-
-  const copyRoomLink = async () => {
-    try {
-      await copyTextToSystemClipboard(activeRoomLink);
-    } catch (e) {
-      collabAPI.setCollabError(t("errors.copyToSystemClipboardFailed"));
-    }
-
-    setJustCopied(true);
-
-    if (timerRef.current) {
-      window.clearTimeout(timerRef.current);
-    }
-
-    timerRef.current = window.setTimeout(() => {
-      setJustCopied(false);
-    }, 3000);
-
-    ref.current?.select();
-  };
-
-  const shareRoomLink = async () => {
-    try {
-      await navigator.share({
-        title: t("roomDialog.shareTitle"),
-        text: t("roomDialog.shareTitle"),
-        url: activeRoomLink,
-      });
-    } catch (error: any) {
-      // Just ignore.
-    }
-  };
 
   return (
     <>
