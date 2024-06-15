@@ -21,6 +21,7 @@ import { FilledButton } from "../../packages/excalidraw/components/FilledButton"
 import type { CollabAPI } from "../collab/Collab";
 import { activeRoomLinkAtom } from "../collab/Collab";
 import { atom, useAtom, useAtomValue } from "jotai";
+import QRCode from "react-qr-code";
 
 import "./ShareDialog.scss";
 import { useUIAppState } from "../../packages/excalidraw/context/ui-appState";
@@ -113,43 +114,12 @@ const ActiveRoomDialog = ({
         onKeyDown={(event) => event.key === KEYS.ENTER && handleClose()}
       />
       <div className="ShareDialog__active__linkRow">
-        <TextField
-          ref={ref}
-          label="Link"
-          readonly
-          fullWidth
+        <QRCode
+          size={256}
+          style={{ height: "20rem", maxWidth: "100%", width: "100%" }}
           value={activeRoomLink}
+          viewBox={`0 0 256 256`}
         />
-        {isShareSupported && (
-          <FilledButton
-            size="large"
-            variant="icon"
-            label="Share"
-            icon={getShareIcon()}
-            className="ShareDialog__active__share"
-            onClick={shareRoomLink}
-          />
-        )}
-        <Popover.Root open={justCopied}>
-          <Popover.Trigger asChild>
-            <FilledButton
-              size="large"
-              label="Copy link"
-              icon={copyIcon}
-              onClick={copyRoomLink}
-            />
-          </Popover.Trigger>
-          <Popover.Content
-            onOpenAutoFocus={(event) => event.preventDefault()}
-            onCloseAutoFocus={(event) => event.preventDefault()}
-            className="ShareDialog__popover"
-            side="top"
-            align="end"
-            sideOffset={5.5}
-          >
-            {tablerCheckIcon} copied
-          </Popover.Content>
-        </Popover.Root>
       </div>
       <div className="ShareDialog__active__description">
         <p>
