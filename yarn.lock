@@ -2824,68 +2824,6 @@
   resolved "https://registry.npmjs.org/@rushstack/eslint-patch/-/eslint-patch-1.10.1.tgz#7ca168b6937818e9a74b47ac4e2112b2e1a024cf"
   integrity sha512-S3Kq8e7LqxkA9s7HKLqXGTGck1uwis5vAXan3FnU5yw1Ec5hsSGnq4s/UCaSqABPOnOTg7zASLyst7+ohgWexg==
 
-"@sentry/browser@6.2.5":
-  version "6.2.5"
-  resolved "https://registry.npmjs.org/@sentry/browser/-/browser-6.2.5.tgz#35e259e16521d26f348a06b31eb495e0033111d6"
-  integrity sha512-nlvaE+D7oaj4MxoY9ikw+krQDOjftnDYJQnOwOraXPk7KYM6YwmkakLuE+x/AkaH3FQVTQF330VAa9d6SWETlA==
-  dependencies:
-    "@sentry/core" "6.2.5"
-    "@sentry/types" "6.2.5"
-    "@sentry/utils" "6.2.5"
-    tslib "^1.9.3"
-
-"@sentry/core@6.2.5":
-  version "6.2.5"
-  resolved "https://registry.npmjs.org/@sentry/core/-/core-6.2.5.tgz#e75093f8598becc0a4a0be927f32f7ac49e8588f"
-  integrity sha512-I+AkgIFO6sDUoHQticP6I27TT3L+i6TUS03in3IEtpBcSeP2jyhlxI8l/wdA7gsBqUPdQ4GHOOaNgtFIcr8qag==
-  dependencies:
-    "@sentry/hub" "6.2.5"
-    "@sentry/minimal" "6.2.5"
-    "@sentry/types" "6.2.5"
-    "@sentry/utils" "6.2.5"
-    tslib "^1.9.3"
-
-"@sentry/hub@6.2.5":
-  version "6.2.5"
-  resolved "https://registry.npmjs.org/@sentry/hub/-/hub-6.2.5.tgz#324cae0c90d736cd1032e94104bf3f18becec4d6"
-  integrity sha512-YlEFdEhcfqpl2HC+/dWXBsBJEljyMzFS7LRRjCk8QANcOdp9PhwQjwebUB4/ulOBjHPP2WZk7fBBd/IKDasTUg==
-  dependencies:
-    "@sentry/types" "6.2.5"
-    "@sentry/utils" "6.2.5"
-    tslib "^1.9.3"
-
-"@sentry/integrations@6.2.5":
-  version "6.2.5"
-  resolved "https://registry.npmjs.org/@sentry/integrations/-/integrations-6.2.5.tgz#37cac11b486779707d62751da36aaaefbb44951a"
-  integrity sha512-4LOgO8lSeGaRV4w1Y03YWtTqrZdm56ciD7k0GLhv+PcFLpiu0exsS1XSs/9vET5LB5GtIgBTeJNNbxVFvvmv8g==
-  dependencies:
-    "@sentry/types" "6.2.5"
-    "@sentry/utils" "6.2.5"
-    localforage "^1.8.1"
-    tslib "^1.9.3"
-
-"@sentry/minimal@6.2.5":
-  version "6.2.5"
-  resolved "https://registry.npmjs.org/@sentry/minimal/-/minimal-6.2.5.tgz#3e963e868bfa68e97581403521fd4e09a8965b02"
-  integrity sha512-RKP4Qx3p7Cv0oX1cPKAkNVFYM7p2k1t32cNk1+rrVQS4hwlJ7Eg6m6fsqsO+85jd6Ne/FnyYsfo9cDD3ImTlWQ==
-  dependencies:
-    "@sentry/hub" "6.2.5"
-    "@sentry/types" "6.2.5"
-    tslib "^1.9.3"
-
-"@sentry/types@6.2.5":
-  version "6.2.5"
-  resolved "https://registry.npmjs.org/@sentry/types/-/types-6.2.5.tgz#34b75285b149e0b9bc5fd54fcc2c445d978c7f2e"
-  integrity sha512-1Sux6CLYrV9bETMsGP/HuLFLouwKoX93CWzG8BjMueW+Di0OGxZphYjXrGuDs8xO8bAKEVGCHgVQdcB2jevS0w==
-
-"@sentry/utils@6.2.5":
-  version "6.2.5"
-  resolved "https://registry.npmjs.org/@sentry/utils/-/utils-6.2.5.tgz#be90d056b09ed1216097d7a29e3e81ba39238e1b"
-  integrity sha512-fJoLUZHrd5MPylV1dT4qL74yNFDl1Ur/dab+pKNSyvnHPnbZ/LRM7aJ8VaRY/A7ZdpRowU+E14e/Yeem2c6gtQ==
-  dependencies:
-    "@sentry/types" "6.2.5"
-    tslib "^1.9.3"
-
 "@sinclair/typebox@^0.27.8":
   version "0.27.8"
   resolved "https://registry.npmjs.org/@sinclair/typebox/-/typebox-0.27.8.tgz#6667fac16c436b5434a387a34dedb013198f6e6e"
@@ -6882,11 +6820,6 @@ image-blob-reduce@3.0.1:
   dependencies:
     pica "^7.1.0"
 
-immediate@~3.0.5:
-  version "3.0.6"
-  resolved "https://registry.npmjs.org/immediate/-/immediate-3.0.6.tgz#9db1dbd0faf8de6fbe0f5dd5e56bb606280de69b"
-  integrity sha512-XXOFtyqDjNDAQxVfYxuF7g9Il/IbWmmlQg2MYKOH8ExIT1qg6xc4zyS3HaEEATgs1btfzxq15ciUiY7gjSXRGQ==
-
 immutable@^4.0.0:
   version "4.3.5"
   resolved "https://registry.npmjs.org/immutable/-/immutable-4.3.5.tgz#f8b436e66d59f99760dc577f5c99a4fd2a5cc5a0"
@@ -7561,13 +7494,6 @@ levn@^0.4.1:
     prelude-ls "^1.2.1"
     type-check "~0.4.0"
 
-lie@3.1.1:
-  version "3.1.1"
-  resolved "https://registry.npmjs.org/lie/-/lie-3.1.1.tgz#9a436b2cc7746ca59de7a41fa469b3efb76bd87e"
-  integrity sha512-RiNhHysUjhrDQntfYSfY4MU24coXXdEOgw9WGcKHNeEwffDYbF//u87M1EWaMGzuFoSbqW0C9C6lEEhDOAswfw==
-  dependencies:
-    immediate "~3.0.5"
-
 lilconfig@2.0.4:
   version "2.0.4"
   resolved "https://registry.npmjs.org/lilconfig/-/lilconfig-2.0.4.tgz#f4507d043d7058b380b6a8f5cb7bcd4b34cee082"
@@ -7638,13 +7564,6 @@ local-pkg@^0.5.0:
   dependencies:
     mlly "^1.4.2"
     pkg-types "^1.0.3"
-
-localforage@^1.8.1:
-  version "1.10.0"
-  resolved "https://registry.npmjs.org/localforage/-/localforage-1.10.0.tgz#5c465dc5f62b2807c3a84c0c6a1b1b3212781dd4"
-  integrity sha512-14/H1aX7hzBBmmh7sGPd+AOMkkIrHM3Z1PAyGgZigA1H1p5O5ANnMyWzvpAETtG68/dC4pC0ncy3+PPGzXZHPg==
-  dependencies:
-    lie "3.1.1"
 
 locate-path@^5.0.0:
   version "5.0.0"
@@ -10075,7 +9994,7 @@ tsconfig-paths@^3.15.0:
     minimist "^1.2.6"
     strip-bom "^3.0.0"
 
-tslib@^1.8.1, tslib@^1.9.3:
+tslib@^1.8.1:
   version "1.14.1"
   resolved "https://registry.npmjs.org/tslib/-/tslib-1.14.1.tgz#cf2d38bdc34a134bcaf1091c41f6619e2f672d00"
   integrity sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==
