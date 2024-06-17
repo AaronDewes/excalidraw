@@ -231,7 +231,7 @@ export class LinearElementEditor {
           elementsMap,
           referencePoint,
           [scenePointerX, scenePointerY],
-          event[KEYS.CTRL_OR_CMD] ? null : appState.gridSize,
+          (event[KEYS.CTRL_OR_CMD] || appState.snapToGrid === false) ? null : appState.gridSize,
         );
 
         LinearElementEditor.movePoints(element, [
@@ -249,7 +249,7 @@ export class LinearElementEditor {
           elementsMap,
           scenePointerX - linearElementEditor.pointerOffset.x,
           scenePointerY - linearElementEditor.pointerOffset.y,
-          event[KEYS.CTRL_OR_CMD] ? null : appState.gridSize,
+          (event[KEYS.CTRL_OR_CMD] || appState.snapToGrid === false) ? null : appState.gridSize,
         );
 
         const deltaX = newDraggingPointPosition[0] - draggingPoint[0];
@@ -266,7 +266,7 @@ export class LinearElementEditor {
                     elementsMap,
                     scenePointerX - linearElementEditor.pointerOffset.x,
                     scenePointerY - linearElementEditor.pointerOffset.y,
-                    event[KEYS.CTRL_OR_CMD] ? null : appState.gridSize,
+                    (event[KEYS.CTRL_OR_CMD] || appState.snapToGrid === false) ? null : appState.gridSize,
                   )
                 : ([
                     element.points[pointIndex][0] + deltaX,
@@ -694,7 +694,7 @@ export class LinearElementEditor {
               elementsMap,
               scenePointer.x,
               scenePointer.y,
-              event[KEYS.CTRL_OR_CMD] ? null : appState.gridSize,
+              (event[KEYS.CTRL_OR_CMD] || appState.snapToGrid === false) ? null : appState.gridSize,
             ),
           ],
         });
@@ -846,7 +846,7 @@ export class LinearElementEditor {
         elementsMap,
         lastCommittedPoint,
         [scenePointerX, scenePointerY],
-        event[KEYS.CTRL_OR_CMD] ? null : appState.gridSize,
+        (event[KEYS.CTRL_OR_CMD] || appState.snapToGrid === false) ? null : appState.gridSize,
       );
 
       newPoint = [
@@ -859,7 +859,7 @@ export class LinearElementEditor {
         elementsMap,
         scenePointerX - appState.editingLinearElement.pointerOffset.x,
         scenePointerY - appState.editingLinearElement.pointerOffset.y,
-        event[KEYS.CTRL_OR_CMD] ? null : appState.gridSize,
+        (event[KEYS.CTRL_OR_CMD] || appState.snapToGrid === false) ? null : appState.gridSize,
       );
     }
 

@@ -322,6 +322,7 @@ export interface AppState {
   zenModeEnabled: boolean;
   theme: Theme;
   gridSize: number | null;
+  snapToGrid: boolean;
   viewModeEnabled: boolean;
 
   /** top-most selected groups (i.e. does not include nested groups) */

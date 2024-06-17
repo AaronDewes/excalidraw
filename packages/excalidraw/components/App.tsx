@@ -35,6 +35,7 @@ import {
   actionToggleElementLock,
   actionToggleLinearEditor,
   actionToggleObjectsSnapMode,
+  actionToggleSnapToGrid,
 } from "../actions";
 import { createRedoAction, createUndoAction } from "../actions/actionHistory";
 import { ActionManager } from "../actions/manager";
@@ -5335,7 +5336,9 @@ class App extends React.Component<AppProps, AppState> {
         const [gridX, gridY] = getGridPoint(
           scenePointerX,
           scenePointerY,
-          event[KEYS.CTRL_OR_CMD] ? null : this.state.gridSize,
+          event[KEYS.CTRL_OR_CMD] || this.state.snapToGrid === false
+            ? null
+            : this.state.gridSize,
         );
 
         const [lastCommittedX, lastCommittedY] =
@@ -6271,7 +6274,9 @@ class App extends React.Component<AppProps, AppState> {
         getGridPoint(
           origin.x,
           origin.y,
-          event[KEYS.CTRL_OR_CMD] ? null : this.state.gridSize,
+          event[KEYS.CTRL_OR_CMD] || this.state.snapToGrid === false
+            ? null
+            : this.state.gridSize,
         ),
       ),
       scrollbars: isOverScrollBars(
@@ -6990,7 +6995,9 @@ class App extends React.Component<AppProps, AppState> {
       const [gridX, gridY] = getGridPoint(
         pointerDownState.origin.x,
         pointerDownState.origin.y,
-        event[KEYS.CTRL_OR_CMD] ? null : this.state.gridSize,
+        event[KEYS.CTRL_OR_CMD] || this.state.snapToGrid === false
+          ? null
+          : this.state.gridSize,
       );
 
       const topLayerFrame = this.getTopLayerFrameAtSceneCoords({
@@ -7283,7 +7290,9 @@ class App extends React.Component<AppProps, AppState> {
       const [gridX, gridY] = getGridPoint(
         pointerCoords.x,
         pointerCoords.y,
-        event[KEYS.CTRL_OR_CMD] ? null : this.state.gridSize,
+        event[KEYS.CTRL_OR_CMD] || this.state.snapToGrid === false
+          ? null
+          : this.state.gridSize,
       );
 
       // for arrows/lines, don't start dragging until a given threshold
@@ -7510,7 +7519,9 @@ class App extends React.Component<AppProps, AppState> {
               this.state,
               this.scene,
               snapOffset,
-              event[KEYS.CTRL_OR_CMD] ? null : this.state.gridSize,
+              event[KEYS.CTRL_OR_CMD] || this.state.snapToGrid === false
+                ? null
+                : this.state.gridSize,
             );
 
           this.setState({
@@ -9461,7 +9472,9 @@ class App extends React.Component<AppProps, AppState> {
       let [gridX, gridY] = getGridPoint(
         pointerCoords.x,
         pointerCoords.y,
-        event[KEYS.CTRL_OR_CMD] ? null : this.state.gridSize,
+        event[KEYS.CTRL_OR_CMD] || this.state.snapToGrid === false
+          ? null
+          : this.state.gridSize,
       );
 
       const image =
@@ -9563,7 +9576,9 @@ class App extends React.Component<AppProps, AppState> {
     let [resizeX, resizeY] = getGridPoint(
       pointerCoords.x - pointerDownState.resize.offset.x,
       pointerCoords.y - pointerDownState.resize.offset.y,
-      event[KEYS.CTRL_OR_CMD] ? null : this.state.gridSize,
+      event[KEYS.CTRL_OR_CMD] || this.state.snapToGrid === false
+        ? null
+        : this.state.gridSize,
     );
 
     const frameElementsOffsetsMap = new Map<
@@ -9594,7 +9609,9 @@ class App extends React.Component<AppProps, AppState> {
       const [gridX, gridY] = getGridPoint(
         pointerCoords.x,
         pointerCoords.y,
-        event[KEYS.CTRL_OR_CMD] ? null : this.state.gridSize,
+        event[KEYS.CTRL_OR_CMD] || this.state.snapToGrid === false
+          ? null
+          : this.state.gridSize,
       );
 
       const dragOffset = {
@@ -9697,6 +9714,7 @@ class App extends React.Component<AppProps, AppState> {
         actionUnlockAllElements,
         CONTEXT_MENU_SEPARATOR,
         actionToggleGridMode,
+        actionToggleSnapToGrid,
         actionToggleObjectsSnapMode,
         actionToggleZenMode,
         actionToggleViewMode,

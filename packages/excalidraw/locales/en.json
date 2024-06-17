@@ -88,6 +88,7 @@
     "ungroup": "Ungroup selection",
     "collaborators": "Collaborators",
     "toggleGrid": "Toggle grid",
+    "toggleSnapToGrid": "Toggle snap to grid",
     "addToLibrary": "Add to library",
     "removeFromLibrary": "Remove from library",
     "libraryLoadingMessage": "Loading library…",
