@@ -303,19 +303,16 @@ ChangeCanvasBackground.displayName = "ChangeCanvasBackground";
 
 export const ToggleGridMode = () => {
   const { t } = useI18n();
-  const appState = useUIAppState();
   const actionManager = useExcalidrawActionManager();
 
   return (
     <DropdownMenuItem
-      onSelect={() =>
-        actionManager.executeAction(actionToggleGridMode, "ui")
-      }
+      onSelect={() => actionManager.executeAction(actionToggleGridMode, "ui")}
       icon={gridIcon}
       data-testid="grid-mode-button"
-      aria-label={t("buttons.grid")}
+      aria-label={t("labels.toggleGrid")}
     >
-      {t("buttons.grid")}
+      {t("labels.toggleGrid")}
     </DropdownMenuItem>
   );
 };
