@@ -57,6 +57,7 @@ export const getDefaultAppState = (): Omit<
     exportWithDarkMode: false,
     fileHandle: null,
     gridSize: null,
+    snapToGrid: false,
     isBindingEnabled: true,
     defaultSidebarDockedPreference: false,
     isLoading: false,
@@ -165,6 +166,7 @@ const APP_STATE_STORAGE_CONF = (<
   exportWithDarkMode: { browser: true, export: false, server: false },
   fileHandle: { browser: false, export: false, server: false },
   gridSize: { browser: true, export: true, server: true },
+  snapToGrid: { browser: true, export: true, server: true },
   height: { browser: false, export: false, server: false },
   isBindingEnabled: { browser: false, export: false, server: false },
   defaultSidebarDockedPreference: {
