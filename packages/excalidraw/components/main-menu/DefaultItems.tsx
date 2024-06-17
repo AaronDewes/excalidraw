@@ -29,6 +29,7 @@ import {
   actionSaveToActiveFile,
   actionShortcuts,
   actionToggleGridMode,
+  actionToggleSnapToGrid,
   actionToggleTheme,
 } from "../../actions";
 import clsx from "clsx";
@@ -317,6 +318,23 @@ export const ToggleGridMode = () => {
   );
 };
 ToggleGridMode.displayName = "ToggleGridMode";
+
+export const ToggleSnapToGrid = () => {
+  const { t } = useI18n();
+  const actionManager = useExcalidrawActionManager();
+
+  return (
+    <DropdownMenuItem
+      onSelect={() => actionManager.executeAction(actionToggleSnapToGrid, "ui")}
+      icon={gridIcon}
+      data-testid="grid-mode-button"
+      aria-label={t("labels.toggleSnapToGrid")}
+    >
+      {t("labels.toggleSnapToGrid")}
+    </DropdownMenuItem>
+  );
+};
+ToggleSnapToGrid.displayName = "ToggleSnapToGrid";
 
 export const Export = () => {
   const { t } = useI18n();

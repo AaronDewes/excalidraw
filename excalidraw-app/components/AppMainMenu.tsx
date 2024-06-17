@@ -41,6 +41,7 @@ export const AppMainMenu: React.FC<{
       </MainMenu.ItemCustom>
       <MainMenu.DefaultItems.ChangeCanvasBackground />
       <MainMenu.DefaultItems.ToggleGridMode />
+      <MainMenu.DefaultItems.ToggleSnapToGrid />
     </MainMenu>
   );
 });
