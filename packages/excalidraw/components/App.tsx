@@ -412,7 +412,7 @@ import { diagramToHTML } from "../data/magic";
 import { exportToBlob } from "../../utils/export";
 import { COLOR_PALETTE } from "../colors";
 import { ElementCanvasButton } from "./MagicButton";
-import { MagicIcon, copyIcon, fullscreenIcon } from "./icons";
+import { copyIcon, fullscreenIcon } from "./icons";
 import { EditorLocalStorage } from "../data/EditorLocalStorage";
 import FollowMode from "./FollowMode/FollowMode";
 import { Store, StoreAction } from "../store";
